@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Crucible Doctor</title>
+  <meta charset="UTF-8">
+
+  <!--angular, angular-route, loadingbar-->
+  <script type="text/javascript" src="../vendors/angular.min.js"></script>
+  <script type="text/javascript" src="../vendors/angular-route.min.js"></script>
+  <script type="text/javascript" src="../vendors/progressbar.min.js"></script>
+
+  <!--myApp & controllers & factories-->
+  <script type="text/javascript" src="../scripts/clientApp.js"></script>
+  <script type="text/javascript" src="../scripts/controllers/docController.js"></script>
+  <script type="text/javascript" src="../scripts/controllers/editController.js"></script>
+  <script type="text/javascript" src="../scripts/controllers/four04Controller.js"></script>
+
+  <!--stylesheets-->
+  <link rel="stylesheet" href="../styles/concise.min.css" />
+  <link rel="stylesheet" href="../styles/stylesheet.css" />
+</head>
+
+<body container ng-app="myApp">
+  <h1 class="text--center">The Crucible Doctor</h1>
+  <div row>
+    <p column="4" class="text--center"><a href="#home">Home</a></p>
+    <p column="4" class="text--center"><a href="#edit">Edit Map Options</a></p>
+    <p column="4" class="text--center"><a href="#review">View Aggregate Statistics</a></p>
+  </div>
+
+  <main ng-view></main>
+</body>
+
+</html>

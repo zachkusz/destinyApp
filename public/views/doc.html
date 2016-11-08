@@ -1,0 +1,56 @@
+<h1>Add Match</h1>
+<form>
+  <label>Map Name:</label>
+  <input type="text" ng-model="mapName" />
+  <label>Game Type:</label>
+  <input type="text" ng-model="gameType" />
+  <label>Against a Fireteam of 3 or more?:</label>
+  <input type="checkbox" ng-model="vsFireteam" />
+  <label>Win:</label>
+  <input type="checkbox" ng-model="win" />
+  <label>K/D:</label>
+  <input type="number" ng-model="kd" />
+  <label>K + A / D</label>
+  <input type="number" ng-model="kad" />
+
+  <button ng-click="submitMatch()">Enter</button>
+</form>
+
+<div row>
+  <h2 class="text--center">Time: {{minutes}}m {{seconds}}s</h2>
+</div>
+<div row>
+  <button column="4" ng-click="startTimer()">{{startText}}</button>
+  <button column="4" ng-click="resetTimer()">Reset</button>
+  <button column="4" ng-click="useCurrentTimer()">Enter Time Alive</button>
+</div>
+
+<h1>Deaths This Match:</h1>
+<div row>
+  <label column="2">Weapon Name:</label>
+  <input column="2" type="text" ng-model="weaponName"/>
+  <label column="2">Weapon Type:</label>
+  <input column="2" type="text" ng-model="weaponType"/>
+  <label column="2">Time Alive:</label>
+  <input column="2" type="text" ng-model="timeAlive"/>
+</div>
+<button ng-click="addDeath()">Enter</button>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Killed With:</th>
+        <th scope="col">Weapon Type:</th>
+        <th scope="col">Time Alive</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="death in deaths">
+        <td>{{death.weaponName}}</td>
+        <td>{{death.weaponType}}</td>
+        <td>{{death.timeAlive}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
