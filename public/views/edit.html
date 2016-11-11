@@ -1,47 +1,15 @@
-<h1>Add Match</h1>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">Map Name</th>
-        <th scope="col">Game Type</th>
-        <th scope="col">Vs Fireteam of 3+</th>
-        <th scope="col">Win/Loss</th>
-        <th scope="col">K/D</th>
-        <th scope="col">K+A/D</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-      </tr>
-    </tbody>
-  </table>
+<h1>Options</h1>
 
-<h1>Edit Matches</h1>
+<h3>Edit Maps</h3>
   <table>
     <thead>
       <tr>
         <th scope="col">Map Name</th>
-        <th scope="col">Game Type</th>
-        <th scope="col">Vs Fireteam of 3+</th>
-        <th scope="col">Win/Loss</th>
-        <th scope="col">K/D</th>
-        <th scope="col">K+A/D</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
-        <td>...</td>
+      <tr ng-repeat="map in maps | orderBy">
+        <td>{{map}}</td>
       </tr>
     </tbody>
   </table>

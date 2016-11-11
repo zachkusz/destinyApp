@@ -11,6 +11,7 @@ var connectionString = 'postgres://localhost:5432/crucibledoctor';
 //var login = require('./routes/login');
 var main = require('./routes/main');
 var matches = require('./routes/matches');
+var maps = require('./routes/maps');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, './public')));
 //app.use('/musicBrainz/', musicBrainz);
 app.use('/', main);
 app.use('/matches/', matches);
+app.use('/maps/', maps);
 
 //set port and listen
 app.set('port', process.env.PORT || 9000);

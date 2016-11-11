@@ -6,6 +6,7 @@ function($scope, $http, $window, $interval) {
   var vsFireteamText = 'No Fireteam';
   $scope.vsFireteam = false;
   $scope.win = false;
+  $scope.weaponName = 'Shotgun'; // test!! for highlighting
 
 ///minutes and seconds stopwatch!!!
   var timer; //declared globally so pauseTimer can access
@@ -66,7 +67,7 @@ function($scope, $http, $window, $interval) {
   $scope.useCurrentTimer = function() { //extra - easy time entry
     $scope.timeAlive = $scope.timeInSeconds;
   }
-///
+///stopwatch
 
 ////tracking array of 'death' objects
   $scope.deaths = [];

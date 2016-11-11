@@ -1,3 +1,7 @@
+/*Make a collection called crucible doctor.
+Within that collection create the following tables*/
+
+/*stores each recorded match played*/
 CREATE TABLE matches
 (
 id SERIAL PRIMARY KEY,
@@ -7,4 +11,15 @@ vs_fireteam boolean not null default false,
 win boolean  not null default false,
 kd float,
 kad float
+);
+
+/*needs table for deaths*/
+
+/*needs join table for matches and deaths*/
+
+/*stores pvp map names*/
+CREATE TABLE maps
+(
+id SERIAL PRIMARY KEY,
+map varchar(30)
 );

@@ -28,7 +28,8 @@
 <h1>Deaths This Match:</h1>
 <div row>
   <label column="2">Weapon Name:</label>
-  <input column="2" type="text" ng-model="weaponName"/>
+  <input column="2" type="text" onClick="this.select();"
+    ng-model="weaponName"/>
   <label column="2">Weapon Type:</label>
   <input column="2" type="text" ng-model="weaponType"/>
   <label column="2">Time Alive:</label>
