@@ -8,7 +8,18 @@ function($scope, $http, $window, $interval) {
   $scope.win = false;
   $scope.weaponName = 'Shotgun'; // test!! for highlighting
 
-///minutes and seconds stopwatch!!!
+  ////maps selection
+  $scope.maps = [];
+
+  $http.get('/maps').then(function(response) {
+    var mapArray = response.data;
+    for (var i = 0; i < mapArray.length; i++) {
+      $scope.maps.push(mapArray[i].map);
+    }
+  });
+  ////
+
+  ///minutes and seconds stopwatch!!!
   var timer; //declared globally so pauseTimer can access
   var startable = true;
   $scope.minutes = 0;
@@ -67,9 +78,9 @@ function($scope, $http, $window, $interval) {
   $scope.useCurrentTimer = function() { //extra - easy time entry
     $scope.timeAlive = $scope.timeInSeconds;
   }
-///stopwatch
+  ///stopwatch
 
-////tracking array of 'death' objects
+  ////tracking array of 'death' objects
   $scope.deaths = [];
   var i = 0; //used to increment through deaths array
 

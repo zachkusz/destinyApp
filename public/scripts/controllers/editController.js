@@ -1,5 +1,5 @@
-app.controller('EditController', ['$scope','$http', '$window', '$location',
-function($scope, $http, $window, $location) {
+app.controller('EditController', ['$scope','$http', '$window',
+function($scope, $http, $window) {
 
   $scope.maps = [];
 
