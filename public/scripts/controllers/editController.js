@@ -1,16 +1,13 @@
 app.controller('EditController', ['$scope','$http', '$window', '$location',
 function($scope, $http, $window, $location) {
 
-  //$scope.maps = ['pie'];
+  $scope.maps = [];
 
   $http.get('/maps').then(function(response) {
-    console.log(response.data);
-    //make function that places each object in the array into my array
-    $scope.maps = response.data
+    var mapArray = response.data;
+    for (var i = 0; i < mapArray.length; i++) {
+      $scope.maps.push(mapArray[i].map);
+    }
   });
-
-  $scope.addMap = function() {
-    $scope.maps.push()
-  }
 
 }]);
