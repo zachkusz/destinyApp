@@ -5,6 +5,7 @@ var path = require('path');
 
 //server connection
 var pg = require('pg');
+var pgp = require('pg-promise')(); //unsure if necesary here
 var connectionString = 'postgres://localhost:5432/crucibledoctor';
 
 //Route inclusion
