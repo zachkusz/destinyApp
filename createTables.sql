@@ -23,3 +23,12 @@ CREATE TABLE maps
 id SERIAL PRIMARY KEY,
 map varchar(30)
 );
+
+/*stores deaths*/
+CREATE TABLE deaths
+(
+id SERIAL PRIMARY KEY,
+killed_with varchar(30),
+weapon_type varchar(30),
+time_alive int
+);
