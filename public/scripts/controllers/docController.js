@@ -6,7 +6,8 @@ function($scope, $http, $window, $interval) {
   var vsFireteamText = 'No Fireteam';
   $scope.vsFireteam = false;
   $scope.win = false;
-  $scope.weaponName = 'Shotgun'; // test!! for highlighting
+
+  $scope.weaponType = 'Shotgun'; // test!! for highlighting
 
   ////maps selection
   $scope.maps = [];
@@ -95,9 +96,9 @@ function($scope, $http, $window, $interval) {
     $scope.deaths[i] = new Death($scope.weaponType, $scope.weaponName,
       $scope.timeAlive);
     //clears input field
-    $scope.weaponType = '';
-    $scope.weaponName = '';
-    $scope.timeAlive = '';
+    //$scope.weaponType = '';
+    //$scope.weaponName = '';
+    //$scope.timeAlive = '';
 
     i++; //increments so we add to array not overwrite, need a function for when user mistypes and deletes 1
     console.log('clicked', i);
@@ -137,7 +138,7 @@ function($scope, $http, $window, $interval) {
     'K+A/D: ' + $scope.kad
     );
 
-    if (confirmChoice == true){
+    if (confirmChoice == true) {
       console.log('chose yes add to DB');
       postMatch(newMatch);
     } else {
@@ -151,6 +152,26 @@ function($scope, $http, $window, $interval) {
         console.log('posting match to db', response);
       }
     );
+  }
+
+  function postDeaths() {
+    $http.post('/deathStats', $scope.deaths).then(
+      function(response) {
+        console.log('posting deaths to db', response);
+      }
+    );
+  }
+
+  //posts final stats on each death
+  $scope.finalStats = function() {
+    var confirmFinalStats = $window.confirm('Complete Crucible Analysis?');
+
+    if (confirmFinalStats == true) {
+      console.log('submited to db');
+      postDeaths();
+    } else {
+      console.log('stats not submited');
+    }
   }
 
 }]);

@@ -12,6 +12,7 @@ var connectionString = 'postgres://localhost:5432/crucibledoctor';
 var main = require('./routes/main');
 var matches = require('./routes/matches');
 var maps = require('./routes/maps');
+var deathStats = require('./routes/deathStats');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, './public')));
 app.use('/', main);
 app.use('/matches/', matches);
 app.use('/maps/', maps);
+app.use('/deathStats', deathStats);
 
 //set port and listen
 app.set('port', process.env.PORT || 9000);
